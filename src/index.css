@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+    @apply flex flex-col max-w-[50rem] mx-auto mt-16 gap-4;
+}
