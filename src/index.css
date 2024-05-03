@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 #root {
-    @apply flex flex-col max-w-[50rem] mx-auto mt-16 gap-4;
+    @apply flex flex-col max-w-[50rem] mx-auto mt-16 gap-4 px-4;
 }

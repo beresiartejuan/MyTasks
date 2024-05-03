@@ -9,7 +9,12 @@ import {
     List
 } from "@material-tailwind/react";
 
+import useTasks from './hooks/useTasks';
+
 function App() {
+
+    const { tasks } = useTasks((state) => state);
+
     return (
         <>
             <div className='text-center py-2'>
@@ -20,14 +25,12 @@ function App() {
             </Card>
             <Card className='bg-gray-100 py-4 px-1'>
                 <List className="flex flex-col gap-3">
-                    <TaskItem id={"ikajdoewdo"}></TaskItem>
-                    <TaskItem id={"ikaj4345do"}></TaskItem>
-                    <TaskItem id={"ikajdafewo"}></TaskItem>
-                    <TaskItem id={"ikaytgyjwdo"}></TaskItem>
-                    <TaskItem id={"ikajsxsxsxewdo"}></TaskItem>
+                    {tasks.map((taks) => (
+                        <TaskItem key={taks.id} id={taks.id} />
+                    ))}
+                    {tasks.length == 0 && <Typography as="span" className="inline-block mx-auto">Empty Task List</Typography>}
                 </List>
             </Card>
-            <footer></footer>
         </>
     );
 }
